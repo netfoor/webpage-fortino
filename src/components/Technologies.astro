@@ -1,0 +1,161 @@
+---
+import Container from "./Container.astro";
+
+// Definir las tecnologías por categorías usando URLs de CDN
+const technologies = {
+  languages: [
+    { name: "Python", image: "https://img.icons8.com/color/48/python--v1.png" },
+    { name: "JavaScript", image: "https://img.icons8.com/color/48/javascript--v1.png" },
+    { name: "PHP", image: "https://img.icons8.com/officel/48/php-logo.png" },
+    { name: "C#", image: "https://img.icons8.com/color/48/c-sharp-logo.png" },
+    { name: "Bash", image: "https://img.icons8.com/color/48/console.png" },
+    { name: "HTML/CSS", image: "https://img.icons8.com/color/48/html-5--v1.png" }
+  ],
+  cloud: [
+    { name: "AWS", image: "https://img.icons8.com/color/48/amazon-web-services.png" },
+    { name: "Google Cloud", image: "https://img.icons8.com/color/48/google-cloud.png" },
+    { name: "Docker", image: "https://img.icons8.com/color/48/docker.png" },
+    { name: "Kubernetes", image: "https://img.icons8.com/color/48/kubernetes.png" },
+    { name: "Firebase", image: "https://img.icons8.com/color/48/firebase.png" },
+    { name: "Cloudflare", image: "https://img.icons8.com/color/48/cloudflare.png" }
+  ],
+  tools: [
+    { name: "Git/GitHub", image: "https://img.icons8.com/color/48/github--v1.png" },
+    { name: "Figma", image: "https://img.icons8.com/color/48/figma--v1.png" },
+    { name: "Notion", image: "https://img.icons8.com/color/48/notion--v1.png" },
+    { name: "WordPress", image: "https://img.icons8.com/color/48/wordpress.png" },
+    { name: "Grafana", image: "https://img.icons8.com/color/48/grafana.png" },
+    { name: "React", image: "https://img.icons8.com/plasticine/100/react.png" }
+  ],
+  iot: [
+    { name: "Arduino", image: "https://img.icons8.com/color/48/arduino.png" },
+    { name: "Raspberry Pi", image: "https://img.icons8.com/color/48/raspberry-pi.png" }
+  ]
+};
+---
+
+<div id="technologies" class="relative py-6 md:py-4">
+  <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+    <div class="blur-[106px] h-56 bg-gradient-to-br from-teal-500 to-teal-400 dark:from-teal-700"></div>
+    <div class="blur-[106px] h-32 bg-gradient-to-r from-indigo-400 to-sky-300 dark:to-indigo-600"></div>
+  </div>
+  
+  <Container>
+    <div class="relative">
+      <div class="flex flex-col md:flex-row gap-10 md:gap-16 mb-12">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
+            Technologies & <span class="text-teal-600 dark:text-teal-400">Tools</span>
+          </h2>
+          <p class="my-8 text-gray-600 dark:text-gray-300 leading-relaxed">
+            These are the technologies I've worked with and continue to explore. I believe in constant learning and staying up to date with industry tools, especially in the cloud and IoT space.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Languages Section -->
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 flex rounded-full bg-indigo-100 dark:bg-indigo-900/20">
+            <span class="text-2xl m-auto">🌐</span>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">Languages</h3>
+        </div>
+        
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          {technologies.languages.map((tech) => (
+            <div class="p-4 grayscale transition duration-200 hover:grayscale-0 hover:-translate-y-1">
+              <img 
+                src={tech.image} 
+                alt={`${tech.name} logo`} 
+                class="h-12 w-auto mx-auto" 
+                loading="lazy"
+                width="48"
+                height="48"
+              />
+              <p class="text-sm text-center mt-2 text-gray-700 dark:text-gray-300">{tech.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Cloud & DevOps Section -->
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 flex rounded-full bg-sky-100 dark:bg-sky-900/20">
+            <span class="text-2xl m-auto">☁️</span>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">Cloud & DevOps</h3>
+        </div>
+        
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          {technologies.cloud.map((tech) => (
+            <div class="p-4 grayscale transition duration-200 hover:grayscale-0 hover:-translate-y-1">
+              <img 
+                src={tech.image} 
+                alt={`${tech.name} logo`} 
+                class="h-12 w-auto mx-auto" 
+                loading="lazy"
+                width="48"
+                height="48"
+              />
+              <p class="text-sm text-center mt-2 text-gray-700 dark:text-gray-300">{tech.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Tools & Frameworks Section -->
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 flex rounded-full bg-teal-100 dark:bg-teal-900/20">
+            <span class="text-2xl m-auto">🛠️</span>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">Tools & Frameworks</h3>
+        </div>
+        
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          {technologies.tools.map((tech) => (
+            <div class="p-4 grayscale transition duration-200 hover:grayscale-0 hover:-translate-y-1">
+              <img 
+                src={tech.image} 
+                alt={`${tech.name} logo`} 
+                class="h-12 w-auto mx-auto" 
+                loading="lazy"
+                width="48"
+                height="48"
+              />
+              <p class="text-sm text-center mt-2 text-gray-700 dark:text-gray-300">{tech.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- IoT & Hardware Section -->
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 flex rounded-full bg-amber-100 dark:bg-amber-900/20">
+            <span class="text-2xl m-auto">🔌</span>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800 dark:text-white">IoT & Hardware</h3>
+        </div>
+        
+        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+          {technologies.iot.map((tech) => (
+            <div class="p-4 grayscale transition duration-200 hover:grayscale-0 hover:-translate-y-1">
+              <img 
+                src={tech.image} 
+                alt={`${tech.name} logo`} 
+                class="h-12 w-auto mx-auto" 
+                loading="lazy"
+                width="48"
+                height="48"
+              />
+              <p class="text-sm text-center mt-2 text-gray-700 dark:text-gray-300">{tech.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </Container>
+</div>

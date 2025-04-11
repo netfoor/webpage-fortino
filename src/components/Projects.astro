@@ -1,0 +1,237 @@
+---
+import Container from "./Container.astro";
+
+const projects = [
+  {
+    title: "SmartWaste Vision",
+    description: "AI-powered waste classification system using IoT, image recognition and real-time monitoring.",
+    stack: "Docker, GCP (Maps API), Python, CV, sensors",
+    notes: "Winner ANUIES4MX – Presented in Valle de Bravo",
+    image: "https://img.icons8.com/color/240/recycling.png"
+  },
+  {
+    title: "Flood Monitoring System (Japan)",
+    description: "Cloud-native flood prediction and monitoring platform deployed using AWS and Docker. Real-time analytics from IoT devices.",
+    stack: "AWS (Timestream, IoT Core, SNS), Docker, Grafana, Linux-based edge devices",
+    notes: "Internship in Osaka – International impact project",
+    image: "https://img.icons8.com/color/240/rain--v1.png"
+  },
+{
+    title: "HackUTP Landing Page",
+    description: "Official web platform for Hackathon UTP. Built with CI/CD pipeline and deployed on AWS Elastic Beanstalk.",
+    stack: "Docker, AWS Elastic Beanstalk, GitHub Actions",
+    notes: "Hackathon @ Universidad Tecnológica de Puebla",
+    image: "https://img.icons8.com/color/240/web.png"
+},
+{
+    title: "Energy Controller for CFE (HackMorelos)",
+    description: "Mobile app to reduce energy consumption during peak hours. Real-time notifications and smart analytics.",
+    stack: "AWS Amplify, AWS SNS, Figma, React Native",
+    notes: "Hackathon @ Tec de Monterrey",
+    image: "https://img.icons8.com/color/240/electricity.png"
+  },
+  {
+    title: "LoboHackathon – Security Ticket System",
+    description: "App for incident management and real-time alerts during large events.",
+    stack: "AWS Amplify, SNS, React, Splunk",
+    notes: "2nd place in the Converge Technology Solutions track",
+    image: "https://img.icons8.com/cotton/64/ticket.png"
+  },
+  {
+    title: "Custom WordPress Web",
+    description: "WordPress site with Firebase for login, Cloudflare for performance and GCP Drive API for dynamic image hosting. Hosted with AWS Lightsail.",
+    stack: "WordPress, Firebase, Cloudflare, GCP, AWS Lightsail",
+    notes: "Latest professional project, full deployment with advanced integration",
+    image: "https://img.icons8.com/color/240/wordpress.png"
+  }
+];
+---
+
+<div id="projects" class="relative py-6 md:py-4">
+  <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+    <div class="blur-[106px] h-56 bg-gradient-to-br from-indigo-600 to-purple-400 dark:from-blue-700"></div>
+    <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-indigo-300 dark:to-indigo-600"></div>
+  </div>
+  
+  <Container>
+    <div class="relative">
+      <div class="flex flex-col md:flex-row gap-10 md:gap-16 mb-12">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
+            Featured <span class="text-indigo-600 dark:text-indigo-400">Projects</span>
+          </h2>
+          <p class="my-8 text-gray-600 dark:text-gray-300 leading-relaxed">
+            Here are some of the projects I've built or collaborated on, using cloud technologies, AI, and IoT to solve real-world problems.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Projects Carousel -->
+      <div class="relative">
+        <!-- Navigation Arrows -->
+        <div class="absolute top-1/2 -left-4 md:-left-6 z-10 transform -translate-y-1/2">
+          <button 
+            id="prev-project" 
+            class="p-2 rounded-full bg-white/80 shadow-md dark:bg-gray-800/80 text-gray-800 dark:text-gray-200 hover:bg-white dark:hover:bg-gray-700 transition-all"
+            aria-label="Previous project"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="overflow-hidden">
+          <div id="projects-container" class="flex transition-all duration-300 ease-in-out">
+            {
+              projects.map((project) => (
+                <div class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1rem)] p-4">
+                  <div class="h-full bg-white dark:bg-gray-800 rounded-2xl shadow-sm overflow-hidden flex flex-col">
+                    <div class="p-6 flex items-center justify-center bg-gray-100 dark:bg-gray-900/50">
+                      <img 
+                        src={project.image} 
+                        alt={`${project.title} project`} 
+                        class="h-24 w-auto" 
+                        loading="lazy"
+                        width="96"
+                        height="96"
+                      />
+                    </div>
+                    <div class="p-6 flex-grow">
+                      <h3 class="font-semibold text-xl text-gray-800 dark:text-white mb-2">
+                        {project.title}
+                      </h3>
+                      <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        {project.description}
+                      </p>
+                      
+                      <div class="mb-4">
+                        <div class="flex items-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-indigo-600 dark:text-indigo-400">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-19.5 0a4.5 4.5 0 01.9-2.7L5.737 5.1a3.375 3.375 0 012.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 01.9 2.7m0 0a3 3 0 01-3 3m0 3h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008zm-3 6h.008v.008h-.008v-.008zm0-6h.008v.008h-.008v-.008z" />
+                          </svg>
+                          <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Tech Stack:</span>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 ml-7">
+                          {project.stack}
+                        </p>
+                      </div>
+                      
+                      {project.notes && (
+                        <div class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
+                          <div class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300">
+                            {project.notes}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="absolute top-1/2 -right-4 md:-right-6 z-10 transform -translate-y-1/2">
+          <button 
+            id="next-project" 
+            class="p-2 rounded-full bg-white/80 shadow-md dark:bg-gray-800/80 text-gray-800 dark:text-gray-200 hover:bg-white dark:hover:bg-gray-700 transition-all"
+            aria-label="Next project"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Carousel Indicators -->
+      <div class="flex justify-center mt-8 gap-2">
+        {projects.map((_, index) => (
+          <button 
+            class={`carousel-indicator w-2.5 h-2.5 rounded-full transition-all duration-300 ${index === 0 ? 'bg-indigo-600 dark:bg-indigo-400 w-8' : 'bg-gray-300 dark:bg-gray-700'}`}
+            data-index={index}
+            aria-label={`Go to project ${index + 1}`}
+          ></button>
+        ))}
+      </div>
+    </div>
+  </Container>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('projects-container');
+    const prevBtn = document.getElementById('prev-project');
+    const nextBtn = document.getElementById('next-project');
+    const indicators = document.querySelectorAll('.carousel-indicator');
+    
+    let currentIndex = 0;
+    const projectCount = indicators.length;
+    
+    // Determine visible projects based on screen width
+    const getVisibleCount = () => {
+      if (window.innerWidth >= 1024) return 3; // lg
+      if (window.innerWidth >= 768) return 2;  // md
+      return 1; // mobile
+    };
+    
+    const updateCarouselPosition = () => {
+      const visibleCount = getVisibleCount();
+      const maxIndex = projectCount - visibleCount;
+      
+      // Ensure currentIndex doesn't go beyond limits
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      if (currentIndex < 0) currentIndex = 0;
+      
+      // Calculate slide position
+      const slideWidth = 100 / visibleCount;
+      const position = -currentIndex * slideWidth;
+      
+      // Apply transform
+      container.style.transform = `translateX(${position}%)`;
+      
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        if (index === currentIndex) {
+          indicator.classList.add('bg-indigo-600', 'dark:bg-indigo-400', 'w-8');
+          indicator.classList.remove('bg-gray-300', 'dark:bg-gray-700', 'w-2.5');
+        } else {
+          indicator.classList.remove('bg-indigo-600', 'dark:bg-indigo-400', 'w-8');
+          indicator.classList.add('bg-gray-300', 'dark:bg-gray-700', 'w-2.5');
+        }
+      });
+      
+      // Handle button visibility (optional)
+      prevBtn.classList.toggle('opacity-50', currentIndex === 0);
+      nextBtn.classList.toggle('opacity-50', currentIndex === maxIndex);
+    };
+    
+    // Event listeners
+    prevBtn.addEventListener('click', () => {
+      currentIndex = Math.max(0, currentIndex - 1);
+      updateCarouselPosition();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+      const visibleCount = getVisibleCount();
+      const maxIndex = projectCount - visibleCount;
+      currentIndex = Math.min(maxIndex, currentIndex + 1);
+      updateCarouselPosition();
+    });
+    
+    // Add click events to indicators
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarouselPosition();
+      });
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', updateCarouselPosition);
+    
+    // Initialize
+    updateCarouselPosition();
+  });
+</script>

@@ -1,0 +1,85 @@
+---
+import Container from "./Container.astro";
+---
+
+<div id="about" class="relative py-6 md:py-4">
+  <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+    <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
+    <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
+  </div>
+  
+  <Container>
+    <div class="relative">
+      <div class="flex flex-col md:flex-row gap-10 md:gap-16">
+        <!-- Left column - Main content -->
+        <div class="md:w-7/12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+            Who am <span class="text-primary">I?</span>
+          </h2>
+          
+          <div class="space-y-6 text-gray-600 dark:text-gray-300">
+            <p class="leading-relaxed">
+              I'm a software engineering student and passionate Cloud Engineer-in-training from Mexico. I specialize in designing cloud-native solutions with AWS, Docker, and IoT, and I believe in using technology to solve real-world challenges.
+            </p>
+            <p class="leading-relaxed">
+              From hackathons to international innovation programs, I thrive in collaborative environments where impact meets creativity. I currently lead the AWS User Group Puebla and have delivered tech talks about my work in Japan and beyond.
+            </p>
+            
+            <blockquote class="pl-4 border-l-4 border-primary italic text-gray-700 dark:text-gray-400 my-8">
+              "I aim to build scalable, impactful tech that serves both people and planet."
+            </blockquote>
+          </div>
+        </div>
+        
+        <!-- Right column - Highlights -->
+        <div class="md:w-5/12 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+            Highlights
+          </h3>
+          
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <span class="text-2xl mr-4">🇯🇵</span>
+              <div>
+                <span class="text-gray-900 dark:text-white font-medium">Intern at Mirai Innovation, Osaka</span>
+                <p class="text-gray-600 dark:text-gray-400">Cloud flood monitoring system</p>
+              </div>
+            </li>
+            
+            <li class="flex items-start">
+              <span class="text-2xl mr-4">🏆</span>
+              <div>
+                <span class="text-gray-900 dark:text-white font-medium">Winner</span>
+                <p class="text-gray-600 dark:text-gray-400">ANUIES4MX National Innovation Challenge</p>
+              </div>
+            </li>
+            
+            <li class="flex items-start">
+              <span class="text-2xl mr-4">🌍</span>
+              <div>
+                <span class="text-gray-900 dark:text-white font-medium">Community Leader</span>
+                <p class="text-gray-600 dark:text-gray-400">Hackathon UTP Organizer & AWS UG Puebla</p>
+              </div>
+            </li>
+            
+            <li class="flex items-start">
+              <span class="text-2xl mr-4">💬</span>
+              <div>
+                <span class="text-gray-900 dark:text-white font-medium">Speaker</span>
+                <p class="text-gray-600 dark:text-gray-400">Talks on international experience and cloud technology</p>
+              </div>
+            </li>
+            
+            <li class="flex items-start">
+              <span class="text-2xl mr-4">📖</span>
+              <div>
+                <span class="text-gray-900 dark:text-white font-medium">Published</span>
+                <p class="text-gray-600 dark:text-gray-400">In UTP academic media</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </Container>
+</div>

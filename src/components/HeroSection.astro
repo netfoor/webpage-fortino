@@ -1,0 +1,115 @@
+---
+import Container from "./Container.astro"
+import Social from "../components/social.astro";
+---
+
+<div class="relative" id="home">
+    <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+      <div class="blur-[106px] h-56 bg-gradient-to-br from-gray-500 to-gray-400 dark:from-gray-700"></div>
+      <div class="blur-[106px] h-32 bg-gradient-to-r from-gray-400 to-gray-300 dark:to-gray-600"></div>
+    </div>
+    <Container>
+        <div class="relative pt-40 ml-auto">
+            <div class="lg:w-2/3 text-center mx-auto">
+                <div class="flex justify-center mb-8">
+                  <div class="relative w-40 h-40 rounded-full overflow-hidden border-2 from-gray-400 to-gray-500 dark:border-gray-700 bg-gradient-to-br">
+                    <img 
+                      src="/images/profile-image.jpeg"
+                      alt="Profile Image" 
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <h1 class="text-gray-900 text-balance dark:text-white font-bold text-3xl md:text-4xl xl:text-5xl">Fortino Romero</h1>
+                <p class="mt-8 text-gray-700 dark:text-gray-300">Cloud Engineer | AWS Advocate | DevOps Enthusiast</p>
+
+                <Social />
+
+
+                
+                
+                <p class="mt-12 text-gray-500 dark:text-gray-400">
+                  <span id="typed-text"></span>
+                </p>
+                <script>
+                  const text = "Building real-world impact through cloud technology, one solution at a time.";
+                  const typedTextSpan = document.getElementById("typed-text");
+                  let index = 0;
+
+                  function type() {
+                  if (index < text.length) {
+                    typedTextSpan.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(type, 30); // Adjust typing speed here (milliseconds)
+                  }
+                  }
+
+                  document.addEventListener("DOMContentLoaded", () => {
+                  typedTextSpan.textContent = ""; // Clear any initial content
+                  index = 0; // Reset index
+                  type(); // Start typing animation
+                  });
+                </script>
+
+                 {/* 
+                <div class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
+                    <a
+                      href="#"
+                      class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                    >
+                      <span class="relative text-base font-semibold text-white"
+                        >See projects</span
+                      >
+                    </a>
+                    <a
+                      href="#"
+                      class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
+                    >
+                      <span
+                        class="relative text-base font-semibold text-primary dark:text-white"
+                        >See CV</span
+                      >
+                    </a>
+                </div>
+
+
+
+                {/* <div class="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between">
+                  <div class="text-left">
+                    <h6 class="text-lg font-semibold text-gray-700 dark:text-white">The lowest price</h6>
+                    <p class="mt-2 text-gray-500">Some text here</p>
+                  </div>
+                  <div class="text-left">
+                    <h6 class="text-lg font-semibold text-gray-700 dark:text-white">The fastest on the market</h6>
+                    <p class="mt-2 text-gray-500">Some text here</p>
+                  </div>
+                  <div class="text-left">
+                    <h6 class="text-lg font-semibold text-gray-700 dark:text-white">The most loved</h6>
+                    <p class="mt-2 text-gray-500">Some text here</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-12 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6">
+                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                  <img src="./images/clients/microsoft.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
+                  </div>
+                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                  <img src="./images/clients/airbnb.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
+                </div>
+                <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+                  <img src="./images/clients/google.svg" class="h-9 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
+                </div>
+                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                  <img src="./images/clients/ge.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
+                  </div>
+                  <div class="p-4 flex grayscale transition duration-200 hover:grayscale-0">
+                  <img src="./images/clients/netflix.svg" class="h-8 w-auto m-auto" loading="lazy" alt="client logo" width="" height="" />
+                  </div>
+                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                  <img src="./images/clients/google-cloud.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
+                </div>
+                </div> */}
+        </div>
+    </Container>
+</div>

@@ -1,0 +1,24 @@
+---
+import HeroSection from '../components/HeroSection.astro';
+import Layout from '../layouts/Layout.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import Technologies from '../components/Technologies.astro';
+import Recognitions from "../components/Recognitions.astro";
+import Publications from "../components/Publications.astro";
+import Certified from "../components/Certified.astro";
+---
+
+<Layout title="Fortino Romero | Cloud Engineer & AWS Advocate"
+description="Fortino Romero's professional portfolio, a cloud engineer specializing in AWS, DevOps, and IoT solutions. Explore my projects, certifications, and experience."
+>
+	<main class="space-y-40 mb-40">
+		<HeroSection/>
+		<About/>
+		<Technologies />	
+		<Projects/>
+		<Certified/>
+		<Recognitions/>
+		<Publications/>
+	</main>
+</Layout>

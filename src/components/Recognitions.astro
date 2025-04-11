@@ -1,0 +1,112 @@
+---
+import Container from "./Container.astro";
+
+// Define recognitions data
+const recognitions = [
+//   {
+//     title: "Talk: Japan Experience",
+//     year: "2024",
+//     description: "Cloud technology for natural disaster management",
+//     details: "Universidad Tecnológica de Puebla / ANUIES events",
+//     role: "Guest Speaker",
+//     notes: "Shared technology immersion experience in Osaka",
+//     image: "/images/recognitions/japan-talk.png" // Replace with actual image path
+//   },
+{
+    title: "Physics Apparatus and Experiments Contest",
+    year: "2023",
+    description: "First place with Hall effect demonstration using Arduino",
+    details: "Won at school level and advanced to state level competition",
+    role: "Team Lead",
+    notes: "Developed and presented an innovative physics experiment",
+    image: "/images/recognitions/calderon.webp" // Replace with actual image path
+},
+  {
+    title: "Second Place - LoboHackathon",
+    year: "2024",
+    description: "Converge Technology Solutions Track",
+    details: "Security app and notifications for events",
+    role: "Team Lead",
+    notes: "Recognized for problem-solving approach and quick response",
+    image: "/images/recognitions/buap.webp" // Replace with actual image path
+  },
+  {
+    title: "Founding Leader - AWS User Group Puebla",
+    year: "2024",
+    description: "Founder and community organizer",
+    details: "Recognized by AWS Community Mexico",
+    role: "Community Leader",
+    notes: "Organization of events, workshops and local talks",
+    image: "/images/recognitions/aws-community.png" // Replace with actual image path
+  },
+//  {
+//    title: "Academic Publications - UTP",
+//    year: "2022-2024",
+//    description: "Institutional recognition",
+//    details: "Featured in newsletters, videos, and official university networks",
+//    role: "Student Representative",
+//    notes: "Projects highlighted as innovation examples",
+//    image: "/images/recognitions/academic-pub.png" // Replace with actual image path
+//  }
+];
+---
+
+<div id="recognitions" class="relative py-16 md:py-24">
+  <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+    <div class="blur-[106px] h-56 bg-gradient-to-br from-amber-500 to-orange-400 dark:from-amber-700"></div>
+    <div class="blur-[106px] h-32 bg-gradient-to-r from-yellow-400 to-amber-300 dark:to-amber-600"></div>
+  </div>
+  
+  <Container>
+    <div class="relative">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-secondary">
+            <path fill-rule="evenodd" d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z" clip-rule="evenodd" />
+        </svg>
+        <br>
+      <div class="flex flex-col md:flex-row gap-10 md:gap-16 mb-12">
+        
+        <div class="md:w-2/3">
+          <h2 class="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
+            <span class="text-amber-600 dark:text-amber-400">Recognitions</span> 
+          </h2>
+          <p class="my-8 text-gray-600 dark:text-gray-300 leading-relaxed">
+            Sharing knowledge is just as important as building solutions. These are some of the talks I've delivered and recognitions I've received for my work in cloud computing and technology for social good.
+          </p>
+        </div>
+      </div>
+      
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {recognitions.map((item) => (
+          <div class="flex flex-col items-center">
+            <div class="p-6 grayscale transition duration-300 hover:grayscale-0 hover:-translate-y-2 w-full flex justify-center">
+              <img 
+                src={item.image} 
+                class="h-32 w-auto mx-auto object-contain" 
+                loading="lazy" 
+                alt={item.title} 
+                width="200" 
+                height="128"
+              />
+            </div>
+            <div class="text-center p-4">
+              <div class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 mb-3">
+                {item.year}
+              </div>
+              <h3 class="font-semibold text-xl text-gray-800 dark:text-white mb-2">
+                {item.title}
+              </h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-2">
+                {item.description}
+              </p>
+              <div class="text-sm text-gray-500 dark:text-gray-400 space-y-1">
+                <p><span class="font-medium"></span> {item.details}</p>
+                <p><span class="font-medium">Role:</span> {item.role}</p>
+                {item.notes && <p><span class="font-medium">Notes:</span> {item.notes}</p>}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</div>

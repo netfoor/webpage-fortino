@@ -1,0 +1,48 @@
+---
+// Define las redes sociales con sus URLs e iconos
+const socialNetworks = [
+    {
+        name: "LinkedIn",
+        url: "https://linkedin.com/in/fortino-romero-mantilla",
+        icon: "/images/social/linkedin.svg"
+    },
+    {
+        name: "GitHub",
+        url: "https://github.com/netfoor",
+        icon: "/images/social/git.svg"
+    },
+    {
+        name: "Email",
+        url: "mailto:fotino.rom@gmail.com",
+        icon: "/images/social/email.svg"
+    },
+    {
+        name: "Instagram",
+        url: "https://instagram.com/foor.rm",
+        icon: "/images/social/instagram.svg"
+    }
+];
+---
+
+<div class="mt-8 ">
+    <div class="grid grid-cols-4 sm:grid-cols-4 gap-4 justify-center">
+        {
+            socialNetworks.map((social) => (
+                <a 
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class={`p-4 flex items-center justify-center transition duration-300 hover:-translate-y-1 hover:shadow-lg rounded-lg ${social.name === "GitHub" ? "opacity-70 hover:opacity-100" : "grayscale hover:grayscale-0"}`}
+                    title={social.name}
+                >
+                    <img 
+                        src={social.icon} 
+                        alt={`${social.name} icon`} 
+                        class="h-8 w-8"
+                        loading="lazy" 
+                    />
+                </a>
+            ))
+        }
+    </div>
+</div>
