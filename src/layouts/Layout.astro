@@ -14,7 +14,7 @@ interface Props {
 // Valores por defecto para SEO
 const { 
     title = "Fortino Romero | Cloud Engineer & AWS Advocate", 
-    description = "Cloud Engineer specialized in AWS, DevOps, and IoT solutions. Professional portfolio with projects, certifications, and experience.",
+    description = "Fortino Romero Mantilla Cloud Engineer specialized in AWS, DevOps, and IoT solutions. Professional portfolio with projects, certifications, and experience.",
     image = "/images/profile-image.jpeg"
 } = Astro.props;
 ---
@@ -31,6 +31,7 @@ const {
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="author" content="Fortino Romero" />
+        <meta name="google-site-verification" content="eeV202wGUJm0GtgglXJkda3PD75pwRjpe2uLoCyr1ZA" />
         
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website" />
@@ -66,6 +67,29 @@ const {
                 },
             ]}
         />
+
+        <!-- Schema.org para Rich Snippets -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Fortino Romero Mantilla",
+      "givenName": "Fortino",
+      "familyName": "Romero Mantilla",
+      "url": "https://foor.dev",
+      "image": "https://foor.dev/images/profile-image.jpeg",
+      "jobTitle": "Cloud Engineer & AWS Advocate",
+      "description": "Cloud Engineer specialized in AWS, DevOps, and IoT solutions. Professional portfolio with projects, certifications, and experience.",
+    "sameAs": [
+      "https://www.linkedin.com/in/fortino-romero",
+      "https://github.com/fortino-romero",
+      "mailto:fortino.rom@gmail.com",
+      "https://x.com/for_rm",
+      "https://instagram.com/for.rm"
+      ],
+      "knowsAbout": ["AWS", "Cloud Computing", "DevOps", "IoT"]
+    }
+    </script>
     </head>
     <body class="bg-white dark:bg-gray-950">
         <AppHeader />
